@@ -19,8 +19,10 @@ class TwitterAuthorizationService: AuthorizationServiceProtocol {
     }
     
     func performAuth(credentials: UserCredentials) -> String {
+        let token = obtainRequestToken()
+        print(token)
         
-        return ""
+        return token
     }
     
     private func obtainRequestToken() -> String {
