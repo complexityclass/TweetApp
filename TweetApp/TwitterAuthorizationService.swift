@@ -19,29 +19,12 @@ class TwitterAuthorizationService: AuthorizationServiceProtocol {
     }
     
     func performAuth(credentials: UserCredentials) -> String {
-        let token = obtainRequestToken()
-        print(token)
-        
+        let token = obtainBearerToken()
         return token
     }
     
-    private func obtainRequestToken() -> String {
-        guard let apiMethodURL = NSURL(string: API.Authorization.requestToken.rawValue) else {
-            return ""
-        }
-        
-        let requestConfiguration = RequestConfiguration(requestURL: apiMethodURL)
-        let request = requestBuilder.constructRequest(requestConfiguration)
-        networkClient.performRequest(request) { (result) in
-            do {
-                let data = try result()
-                print("data = \(data)")
-            }
-            catch let error as NSError {
-                print("error = \(error)")
-            }
-        }
-        
-        return ""
+    //TODO: Заменить на реальную авторизацию
+    private func obtainBearerToken() -> String {
+        return "AAAAAAAAAAAAAAAAAAAAAFvixgAAAAAATbonDP453frNAA%2F9jAsMcVY%2Fht8%3D5MfSRQYRpy0tolROFcwIcTip5or3pBVOJFi51EmwpQ06B194iw"
     }
 }

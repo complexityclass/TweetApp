@@ -23,6 +23,8 @@ class AuthorizationPresenter: AuthorizationModuleInput, AuthorizationViewOutput 
     func authButtonDidTapped() {
         
         let credentials = UserCredentials(login: "", password: "")
-        authorizationService.performAuth(credentials)
+        let token = authorizationService.performAuth(credentials)
+        
+        print("authorize with token : \(token)")
     }
 }

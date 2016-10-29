@@ -19,6 +19,7 @@ class NetworkClientImplementation: NetworkClient {
     // MARK: - Network Client
     
     func performRequest(request: NSURLRequest, completion: NetworkClientCompletion?) {
+        print(request)
         let dataTask = session.dataTaskWithRequest(request) { (data, response, error) in
             completion? (result: {
                 if let networkError = error {
@@ -28,6 +29,8 @@ class NetworkClientImplementation: NetworkClient {
                 guard let responseData = data else {
                     throw NetworkClientError.emptyDataReturned
                 }
+                
+                print(response)
                 
                 return responseData
             })

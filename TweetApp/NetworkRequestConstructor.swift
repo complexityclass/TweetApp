@@ -16,4 +16,14 @@ protocol NetworkRequestConstructor {
 
 struct RequestConfiguration {
     let requestURL: NSURL
+    let requestType: RequestType
+    let parameters: [String: AnyObject]?
 }
+
+enum RequestType: String {
+    case POST
+    case GET
+}
+
+let PostStringParameterKey = "PostStringParameterKey"
+
