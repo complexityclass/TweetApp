@@ -12,6 +12,7 @@ class TweetListServiceImplementation: TweetListService {
     
     let networkClient: NetworkClient
     let requestBuilder: NetworkRequestConstructor
+    var credentials = Credentials.self
     
     init(client: NetworkClient, constructor: NetworkRequestConstructor) {
         self.networkClient = client
@@ -27,8 +28,8 @@ class TweetListServiceImplementation: TweetListService {
         let requestConfiguration = RequestConfiguration(requestURL: apiURL,
                                                         requestType: .GET,
                                                         parameters: nil,
-                                                        headers: requestHeaders,
-                                                        urlParameters: urlParameters)
+                                                        headers: credentials.requestHeaders,
+                                                        urlParameters: credentials.urlParameters)
         
         let request = requestBuilder.constructRequest(requestConfiguration)
         
@@ -43,12 +44,4 @@ class TweetListServiceImplementation: TweetListService {
             }
         }
     }
-    
-    private let requestHeaders = ["Accept-Encoding": "gzip",
-                "Authorization" : "Bearer AAAAAAAAAAAAAAAAAAAAAFvixgAAAAAATbonDP453frNAA%2F9jAsMcVY%2Fht8%3D5MfSRQYRpy0tolROFcwIcTip5or3pBVOJFi51EmwpQ06B194iw"]
-    
-    private let urlParameters = [
-        "screen_name": "twitterapi",
-        "count": "10",
-        ]
 }
