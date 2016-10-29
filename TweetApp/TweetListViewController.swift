@@ -9,26 +9,26 @@
 import UIKit
 import CoreData
 
-class TweetListViewController: UIViewController {
+class TweetListViewController: UIViewController, TweetListViewInput {
+    
+    var output: TweetListViewOutput?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        
+//        let fetchRequest = NSFetchRequest(entityName: String(TweetObject))
+//        fetchRequest.sortDescriptors = TweetObject.defaultSortDescriptors
+//        fetchRequest.fetchBatchSize = 5
+//        
+//        let objects = try! appDelegate.coreDataStack.managedObjectContext.executeFetchRequest(fetchRequest)
+//        
+//        for object in objects {
+//            print("object = \(object)")
+//        }
         
-        let fetchRequest = NSFetchRequest(entityName: String(TweetObject))
-        fetchRequest.sortDescriptors = TweetObject.defaultSortDescriptors
-        fetchRequest.fetchBatchSize = 5
-        
-        let objects = try! appDelegate.coreDataStack.managedObjectContext.executeFetchRequest(fetchRequest)
-        
-        for object in objects {
-            print("object = \(object)")
-        }
-        
-        
-        
-        // Do any additional setup after loading the view.
+        output?.viewDidFinishLoading()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +36,9 @@ class TweetListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: TweetListViewInput
+    
+    func setupInitialState() {
+        
     }
-    */
-
 }

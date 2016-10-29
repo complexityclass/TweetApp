@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="-84.5" y="390.5"/>
         </scene>
-        <!--Tweet List View Controller-->
+        <!--View Controller-->
         <scene sceneID="I1W-zm-Yo8">
             <objects>
                 <viewController id="ZU4-mf-haz" customClass="TweetListViewController" customModule="TweetApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,6 +68,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="372-7F-Fs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="9nE-D1-2jE" customClass="TweetListModuleAssembly" customModule="TweetApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="ZU4-mf-haz" id="5MJ-nV-T5R"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="474.5" y="390.5"/>
         </scene>
