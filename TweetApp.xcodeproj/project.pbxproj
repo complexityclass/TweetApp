@@ -11,6 +11,16 @@
 		648CE3D51DC4D18B00CBAC1E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3D31DC4D18B00CBAC1E /* NetworkClient.swift */; };
 		648CE3D71DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3D61DC4D25C00CBAC1E /* NetworkClientImplementation.swift */; };
 		648CE3D81DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3D61DC4D25C00CBAC1E /* NetworkClientImplementation.swift */; };
+		648CE3DC1DC4D57900CBAC1E /* NetworkRequestConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3DB1DC4D57900CBAC1E /* NetworkRequestConstructor.swift */; };
+		648CE3DD1DC4D57900CBAC1E /* NetworkRequestConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3DB1DC4D57900CBAC1E /* NetworkRequestConstructor.swift */; };
+		648CE3DF1DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3DE1DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift */; };
+		648CE3E01DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3DE1DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift */; };
+		648CE3E21DC4D6BC00CBAC1E /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3E11DC4D6BC00CBAC1E /* URLRequestFactory.swift */; };
+		648CE3E31DC4D6BC00CBAC1E /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3E11DC4D6BC00CBAC1E /* URLRequestFactory.swift */; };
+		648CE3E51DC4D70D00CBAC1E /* URLRequestFactoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3E41DC4D70D00CBAC1E /* URLRequestFactoryImplementation.swift */; };
+		648CE3E61DC4D70D00CBAC1E /* URLRequestFactoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3E41DC4D70D00CBAC1E /* URLRequestFactoryImplementation.swift */; };
+		648CE3E91DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3E81DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift */; };
+		648CE3EA1DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3E81DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift */; };
 		64B2784C1DC4ACC3006DEFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2784B1DC4ACC3006DEFFB /* AppDelegate.swift */; };
 		64B2784E1DC4ACC3006DEFFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2784D1DC4ACC3006DEFFB /* ViewController.swift */; };
 		64B278511DC4ACC3006DEFFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B2784F1DC4ACC3006DEFFB /* Main.storyboard */; };
@@ -33,6 +43,11 @@
 /* Begin PBXFileReference section */
 		648CE3D31DC4D18B00CBAC1E /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		648CE3D61DC4D25C00CBAC1E /* NetworkClientImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientImplementation.swift; sourceTree = "<group>"; };
+		648CE3DB1DC4D57900CBAC1E /* NetworkRequestConstructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestConstructor.swift; sourceTree = "<group>"; };
+		648CE3DE1DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestConstructorImplementation.swift; sourceTree = "<group>"; };
+		648CE3E11DC4D6BC00CBAC1E /* URLRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
+		648CE3E41DC4D70D00CBAC1E /* URLRequestFactoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestFactoryImplementation.swift; sourceTree = "<group>"; };
+		648CE3E81DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestFactoryConfiguration.swift; sourceTree = "<group>"; };
 		64B278481DC4ACC3006DEFFB /* TweetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B2784B1DC4ACC3006DEFFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64B2784D1DC4ACC3006DEFFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,10 +82,39 @@
 		648CE3D11DC4BB1000CBAC1E /* Core layer */ = {
 			isa = PBXGroup;
 			children = (
+				648CE3DA1DC4D55B00CBAC1E /* RequestConstructor */,
+				648CE3D91DC4D54300CBAC1E /* NetworkClient */,
+			);
+			name = "Core layer";
+			sourceTree = "<group>";
+		};
+		648CE3D91DC4D54300CBAC1E /* NetworkClient */ = {
+			isa = PBXGroup;
+			children = (
 				648CE3D31DC4D18B00CBAC1E /* NetworkClient.swift */,
 				648CE3D61DC4D25C00CBAC1E /* NetworkClientImplementation.swift */,
 			);
-			name = "Core layer";
+			name = NetworkClient;
+			sourceTree = "<group>";
+		};
+		648CE3DA1DC4D55B00CBAC1E /* RequestConstructor */ = {
+			isa = PBXGroup;
+			children = (
+				648CE3E71DC4D73500CBAC1E /* URLRequestFactory */,
+				648CE3DB1DC4D57900CBAC1E /* NetworkRequestConstructor.swift */,
+				648CE3DE1DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift */,
+			);
+			name = RequestConstructor;
+			sourceTree = "<group>";
+		};
+		648CE3E71DC4D73500CBAC1E /* URLRequestFactory */ = {
+			isa = PBXGroup;
+			children = (
+				648CE3E81DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift */,
+				648CE3E11DC4D6BC00CBAC1E /* URLRequestFactory.swift */,
+				648CE3E41DC4D70D00CBAC1E /* URLRequestFactoryImplementation.swift */,
+			);
+			name = URLRequestFactory;
 			sourceTree = "<group>";
 		};
 		64B2783F1DC4ACC3006DEFFB = {
@@ -217,10 +261,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				64B2784E1DC4ACC3006DEFFB /* ViewController.swift in Sources */,
+				648CE3DF1DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift in Sources */,
 				64B278541DC4ACC3006DEFFB /* TweetApp.xcdatamodeld in Sources */,
+				648CE3E91DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift in Sources */,
 				64B2784C1DC4ACC3006DEFFB /* AppDelegate.swift in Sources */,
+				648CE3DC1DC4D57900CBAC1E /* NetworkRequestConstructor.swift in Sources */,
 				648CE3D71DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */,
+				648CE3E21DC4D6BC00CBAC1E /* URLRequestFactory.swift in Sources */,
 				648CE3D41DC4D18B00CBAC1E /* NetworkClient.swift in Sources */,
+				648CE3E51DC4D70D00CBAC1E /* URLRequestFactoryImplementation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,9 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648CE3E61DC4D70D00CBAC1E /* URLRequestFactoryImplementation.swift in Sources */,
+				648CE3E01DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift in Sources */,
 				648CE3D81DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */,
+				648CE3EA1DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift in Sources */,
 				64B278641DC4ACC3006DEFFB /* TweetAppTests.swift in Sources */,
 				648CE3D51DC4D18B00CBAC1E /* NetworkClient.swift in Sources */,
+				648CE3E31DC4D6BC00CBAC1E /* URLRequestFactory.swift in Sources */,
+				648CE3DD1DC4D57900CBAC1E /* NetworkRequestConstructor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
