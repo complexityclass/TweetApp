@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		648CE3D41DC4D18B00CBAC1E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3D31DC4D18B00CBAC1E /* NetworkClient.swift */; };
+		648CE3D51DC4D18B00CBAC1E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3D31DC4D18B00CBAC1E /* NetworkClient.swift */; };
+		648CE3D71DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3D61DC4D25C00CBAC1E /* NetworkClientImplementation.swift */; };
+		648CE3D81DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648CE3D61DC4D25C00CBAC1E /* NetworkClientImplementation.swift */; };
 		64B2784C1DC4ACC3006DEFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2784B1DC4ACC3006DEFFB /* AppDelegate.swift */; };
 		64B2784E1DC4ACC3006DEFFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2784D1DC4ACC3006DEFFB /* ViewController.swift */; };
 		64B278511DC4ACC3006DEFFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B2784F1DC4ACC3006DEFFB /* Main.storyboard */; };
@@ -27,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		648CE3D31DC4D18B00CBAC1E /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		648CE3D61DC4D25C00CBAC1E /* NetworkClientImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientImplementation.swift; sourceTree = "<group>"; };
 		64B278481DC4ACC3006DEFFB /* TweetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B2784B1DC4ACC3006DEFFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64B2784D1DC4ACC3006DEFFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		648CE3D11DC4BB1000CBAC1E /* Core layer */ = {
+			isa = PBXGroup;
+			children = (
+				648CE3D31DC4D18B00CBAC1E /* NetworkClient.swift */,
+				648CE3D61DC4D25C00CBAC1E /* NetworkClientImplementation.swift */,
+			);
+			name = "Core layer";
+			sourceTree = "<group>";
+		};
 		64B2783F1DC4ACC3006DEFFB = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +94,7 @@
 		64B2784A1DC4ACC3006DEFFB /* TweetApp */ = {
 			isa = PBXGroup;
 			children = (
+				648CE3D11DC4BB1000CBAC1E /* Core layer */,
 				64B2784B1DC4ACC3006DEFFB /* AppDelegate.swift */,
 				64B2784D1DC4ACC3006DEFFB /* ViewController.swift */,
 				64B2784F1DC4ACC3006DEFFB /* Main.storyboard */,
@@ -203,6 +219,8 @@
 				64B2784E1DC4ACC3006DEFFB /* ViewController.swift in Sources */,
 				64B278541DC4ACC3006DEFFB /* TweetApp.xcdatamodeld in Sources */,
 				64B2784C1DC4ACC3006DEFFB /* AppDelegate.swift in Sources */,
+				648CE3D71DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */,
+				648CE3D41DC4D18B00CBAC1E /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648CE3D81DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */,
 				64B278641DC4ACC3006DEFFB /* TweetAppTests.swift in Sources */,
+				648CE3D51DC4D18B00CBAC1E /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +412,7 @@
 				64B2786A1DC4ACC3006DEFFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64B2786B1DC4ACC3006DEFFB /* Build configuration list for PBXNativeTarget "TweetAppTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +421,7 @@
 				64B2786D1DC4ACC3006DEFFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
