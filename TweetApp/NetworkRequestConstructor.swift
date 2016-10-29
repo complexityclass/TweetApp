@@ -9,9 +9,9 @@
 import Foundation
 
 /// Протокол создание сетевых запросов
-protocol NetworkrequestConstructor {
+protocol NetworkRequestConstructor {
     
-    func constructRequest(parameters: [String: AnyObject]?) throws -> NSURLRequest
+    func constructRequest(configuration: RequestConfiguration) -> NSURLRequest
 }
 
 struct RequestConfiguration {

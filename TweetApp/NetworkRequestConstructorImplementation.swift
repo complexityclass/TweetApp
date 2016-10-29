@@ -8,18 +8,16 @@
 
 import Foundation
 
-class NetworkRequestConstructorImplementation: NetworkrequestConstructor {
+class NetworkRequestConstructorImplementation: NetworkRequestConstructor {
     
     private let urlRequestFactory: URLRequestFactory
-    private let requestConfiguration: RequestConfiguration
     
-    init(configuration: RequestConfiguration, urlRequestFactory: URLRequestFactory) {
-        self.requestConfiguration = configuration
+    init(urlRequestFactory: URLRequestFactory) {
         self.urlRequestFactory = urlRequestFactory
     }
     
-    func constructRequest(parameters: [String : AnyObject]?) throws -> NSURLRequest {
-        let request = urlRequestFactory.createURLRequest(requestConfiguration.requestURL)
+    func constructRequest(configuration: RequestConfiguration) -> NSURLRequest {
+        let request = urlRequestFactory.createURLRequest(configuration.requestURL)
         
         return request.copy() as! NSURLRequest
     }
