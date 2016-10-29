@@ -8,23 +8,11 @@
 
 import Foundation
 
-class TweetLoadingOperation: NSOperation {
+class TweetLoadingOperation: BaseOperation {
     
     var client: NetworkClient!
     var request: NSURLRequest!
     var obtainedData: NSData?
-    
-    var junk: Bool = false
-    override var finished: Bool {
-        get {
-            return junk
-        }
-        set (newAnswer) {
-            willChangeValueForKey("isFinished")
-            junk = newAnswer
-            didChangeValueForKey("isFinished")
-        }
-    }
     
     override func start() {
         if cancelled {
@@ -46,9 +34,5 @@ class TweetLoadingOperation: NSOperation {
                 strongSelf.finished = true
             }
         }
-    }
-    
-    deinit {
-        print("tweet loading operation deinited")
     }
 }

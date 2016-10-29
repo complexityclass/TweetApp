@@ -8,16 +8,31 @@
 
 import UIKit
 
-class TweetParsingOperation: NSOperation {
+typealias JSONDictionary = [String: AnyObject]
+
+class TweetParsingOperation: BaseOperation {
     
     var data: NSData?
-    var error: NSError?
+    var mapping: ([String: AnyObject] -> Tweet)?
     
     override func main() {
         guard let data = data else {
             return
         }
         
-        print("parse data : \(String(data: data, encoding: NSUTF8StringEncoding))")
+        do {
+            let array = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
+            if let array = array as? [JSONDictionary] {
+                let tweets = array.flatMap(Tweet.init)
+                for tweet in tweets {
+                    print("--------")
+                    print(tweet)
+                }
+            }
+            
+        } catch let error as NSError {
+            print(error)
+            finished = true
+        }
     }
 }

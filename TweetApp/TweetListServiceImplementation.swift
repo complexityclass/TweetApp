@@ -43,7 +43,6 @@ class TweetListServiceImplementation: TweetListService {
         
         let adapterOperation = NSBlockOperation {
             parsingOperation.data = tweetLoadingOperation.obtainedData
-            parsingOperation.error = nil
         }
         
         adapterOperation.addDependency(tweetLoadingOperation)
