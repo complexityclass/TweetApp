@@ -14,6 +14,8 @@ class TweetListServiceImplementation: TweetListService {
     let requestBuilder: NetworkRequestConstructor
     var credentials = Credentials.self
     
+    let operationQueue: NSOperationQueue = NSOperationQueue()
+    
     init(client: NetworkClient, constructor: NetworkRequestConstructor) {
         self.networkClient = client
         self.requestBuilder = constructor
@@ -33,15 +35,10 @@ class TweetListServiceImplementation: TweetListService {
         
         let request = requestBuilder.constructRequest(requestConfiguration)
         
-        networkClient.performRequest(request) { (result) in
-            
-            do {
-                let data = try result()
-                print("\(String(data: data, encoding: NSUTF8StringEncoding))")
-            }
-            catch let error as NSError {
-                print("error = \(error)")
-            }
-        }
+        let tweetLoadingOperation = TweetLoadingOperation()
+        tweetLoadingOperation.client = networkClient
+        tweetLoadingOperation.request = request
+        
+        operationQueue.addOperation(tweetLoadingOperation)
     }
 }
