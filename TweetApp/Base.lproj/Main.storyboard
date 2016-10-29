@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="-84.5" y="390.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Tweet List View Controller-->
         <scene sceneID="I1W-zm-Yo8">
             <objects>
-                <viewController id="ZU4-mf-haz" sceneMemberID="viewController">
+                <viewController id="ZU4-mf-haz" customClass="TweetListViewController" customModule="TweetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D6a-Dl-wn0"/>
                         <viewControllerLayoutGuide type="bottom" id="gab-dL-Xde"/>

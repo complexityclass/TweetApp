@@ -13,7 +13,7 @@ typealias JSONDictionary = [String: AnyObject]
 class TweetParsingOperation: BaseOperation {
     
     var data: NSData?
-    var mapping: ([String: AnyObject] -> Tweet)?
+    var mappedTweets: [Tweet]?
     
     override func main() {
         guard let data = data else {
@@ -28,7 +28,10 @@ class TweetParsingOperation: BaseOperation {
                     print("--------")
                     print(tweet)
                 }
+                mappedTweets = tweets
             }
+            
+            finished = true
             
         } catch let error as NSError {
             print(error)

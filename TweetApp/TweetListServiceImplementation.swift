@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class TweetListServiceImplementation: TweetListService {
     
@@ -41,15 +43,29 @@ class TweetListServiceImplementation: TweetListService {
         
         let parsingOperation = TweetParsingOperation()
         
-        let adapterOperation = NSBlockOperation {
+        let firstAdapterOperation = NSBlockOperation {
+            print("first connected")
             parsingOperation.data = tweetLoadingOperation.obtainedData
         }
         
-        adapterOperation.addDependency(tweetLoadingOperation)
-        parsingOperation.addDependency(adapterOperation)
+        let savingOperation = TweetSavingOperation()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        savingOperation.context = appDelegate.coreDataStack.managedObjectContext
+        
+        let secondAdapterOperation = NSBlockOperation {
+            print("second connected")
+            savingOperation.tweets = parsingOperation.mappedTweets
+        }
+        
+        firstAdapterOperation.addDependency(tweetLoadingOperation)
+        parsingOperation.addDependency(firstAdapterOperation)
+        secondAdapterOperation.addDependency(parsingOperation)
+        savingOperation.addDependency(secondAdapterOperation)
         
         operationQueue.addOperation(tweetLoadingOperation)
-        operationQueue.addOperation(adapterOperation)
+        operationQueue.addOperation(firstAdapterOperation)
         operationQueue.addOperation(parsingOperation)
+        operationQueue.addOperation(secondAdapterOperation)
+        operationQueue.addOperation(savingOperation)
     }
 }
