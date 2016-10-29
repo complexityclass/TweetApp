@@ -10,5 +10,5 @@ import Foundation
 
 protocol URLRequestFactory {
     
-    func createURLRequest(requestURL: NSURL) -> NSMutableURLRequest
+    func createURLRequest(requestURL: NSURL, urlParameters: [String: String]?) -> NSMutableURLRequest
 }

@@ -18,6 +18,8 @@ struct RequestConfiguration {
     let requestURL: NSURL
     let requestType: RequestType
     let parameters: [String: AnyObject]?
+    let headers: [String: String]?
+    let urlParameters: [String: String]?
 }
 
 enum RequestType: String {

@@ -17,10 +17,16 @@ class NetworkRequestConstructorImplementation: NetworkRequestConstructor {
     }
     
     func constructRequest(configuration: RequestConfiguration) -> NSURLRequest {
-        let request = urlRequestFactory.createURLRequest(configuration.requestURL)
+        let request = urlRequestFactory.createURLRequest(configuration.requestURL, urlParameters: configuration.urlParameters)
         request.HTTPMethod = configuration.requestType.rawValue
         if let params = configuration.parameters {
             request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(params, options: .PrettyPrinted)
+        }
+        
+        if let headers = configuration.headers {
+            for (header, value) in headers {
+                request.addValue(value, forHTTPHeaderField: header)
+            }
         }
         
         return request.copy() as! NSURLRequest

@@ -13,4 +13,8 @@ enum API {
     enum Authorization: String {
         case requestToken = "https://api.twitter.com/oauth/request_token"
     }
+    
+    enum Timeline: String {
+        case user_timeline = "https://api.twitter.com/1.1/statuses/user_timeline.json"
+    }
 }

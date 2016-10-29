@@ -18,6 +18,14 @@ class ServiceAssembly {
         return authorizationService
     }
     
+    func tweetListService() -> TweetListService {
+        let urlRequestFactory = URLRequestFactoryImplementation(configuration: URLRequestFactoryConfiguration())
+        let requestConstructor = NetworkRequestConstructorImplementation(urlRequestFactory: urlRequestFactory)
+        let tweetListService = TweetListServiceImplementation(client: networkClient, constructor: requestConstructor)
+        
+        return tweetListService
+    }
+    
     lazy var networkClient: NetworkClient = {
         return NetworkClientImplementation(session: NSURLSession.sharedSession())
     }()
