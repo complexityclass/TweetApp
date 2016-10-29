@@ -12,6 +12,7 @@ class TweetLoadingOperation: NSOperation {
     
     var client: NetworkClient!
     var request: NSURLRequest!
+    var obtainedData: NSData?
     
     var junk: Bool = false
     override var finished: Bool {
@@ -37,7 +38,7 @@ class TweetLoadingOperation: NSOperation {
             
             do {
                 let data = try result()
-                print("\(String(data: data, encoding: NSUTF8StringEncoding))")
+                strongSelf.obtainedData = data
                 strongSelf.finished = true
             }
             catch let error as NSError {

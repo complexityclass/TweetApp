@@ -39,6 +39,18 @@ class TweetListServiceImplementation: TweetListService {
         tweetLoadingOperation.client = networkClient
         tweetLoadingOperation.request = request
         
+        let parsingOperation = TweetParsingOperation()
+        
+        let adapterOperation = NSBlockOperation {
+            parsingOperation.data = tweetLoadingOperation.obtainedData
+            parsingOperation.error = nil
+        }
+        
+        adapterOperation.addDependency(tweetLoadingOperation)
+        parsingOperation.addDependency(adapterOperation)
+        
         operationQueue.addOperation(tweetLoadingOperation)
+        operationQueue.addOperation(adapterOperation)
+        operationQueue.addOperation(parsingOperation)
     }
 }
