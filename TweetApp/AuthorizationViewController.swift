@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthorizationViewController: UIViewController {
+class AuthorizationViewController: UIViewController, Router {
     
     var output: AuthorizationViewOutput!
 
@@ -25,5 +25,6 @@ class AuthorizationViewController: UIViewController {
     
     @IBAction func authorizeTap(sender: AnyObject) {
         output.authButtonDidTapped()
+        routeToTweetList()
     }
 }

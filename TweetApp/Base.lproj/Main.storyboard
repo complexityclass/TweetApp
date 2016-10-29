@@ -39,6 +39,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <segue destination="ZU4-mf-haz" kind="show" identifier="showTweetList" id="rSL-TQ-PEg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="0hB-DQ-bUc" customClass="AuthorizationModuleAssembly" customModule="TweetApp" customModuleProvider="target">
@@ -47,7 +50,26 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="290.5" y="399.5"/>
+            <point key="canvasLocation" x="-84.5" y="390.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I1W-zm-Yo8">
+            <objects>
+                <viewController id="ZU4-mf-haz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D6a-Dl-wn0"/>
+                        <viewControllerLayoutGuide type="bottom" id="gab-dL-Xde"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Snr-Eo-AGH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="372-7F-Fs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="474.5" y="390.5"/>
         </scene>
     </scenes>
 </document>
