@@ -10,5 +10,5 @@ import Foundation
 
 protocol TweetListService {
     
-    func obtainTweets(maxId: Int?, completion: [AnyObject])
+    func loadTweets(maxId: Int?)
 }

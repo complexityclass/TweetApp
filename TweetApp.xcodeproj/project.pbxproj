@@ -80,6 +80,8 @@
 		649704D41DC5530F00323814 /* TweetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649704D21DC5530F00323814 /* TweetListPresenter.swift */; };
 		649704D61DC5537100323814 /* TweetListModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649704D51DC5537100323814 /* TweetListModuleInput.swift */; };
 		649704D71DC5537100323814 /* TweetListModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649704D51DC5537100323814 /* TweetListModuleInput.swift */; };
+		649704D91DC5551900323814 /* TweetServiceOperationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649704D81DC5551900323814 /* TweetServiceOperationBuilder.swift */; };
+		649704DA1DC5551900323814 /* TweetServiceOperationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649704D81DC5551900323814 /* TweetServiceOperationBuilder.swift */; };
 		64B2784C1DC4ACC3006DEFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2784B1DC4ACC3006DEFFB /* AppDelegate.swift */; };
 		64B2784E1DC4ACC3006DEFFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2784D1DC4ACC3006DEFFB /* ViewController.swift */; };
 		64B278511DC4ACC3006DEFFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B2784F1DC4ACC3006DEFFB /* Main.storyboard */; };
@@ -136,6 +138,7 @@
 		649704CF1DC552A400323814 /* TweetListViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetListViewOutput.swift; sourceTree = "<group>"; };
 		649704D21DC5530F00323814 /* TweetListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetListPresenter.swift; sourceTree = "<group>"; };
 		649704D51DC5537100323814 /* TweetListModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetListModuleInput.swift; sourceTree = "<group>"; };
+		649704D81DC5551900323814 /* TweetServiceOperationBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetServiceOperationBuilder.swift; sourceTree = "<group>"; };
 		64B278481DC4ACC3006DEFFB /* TweetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B2784B1DC4ACC3006DEFFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64B2784D1DC4ACC3006DEFFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +309,7 @@
 		649704A61DC526FA00323814 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				649704D81DC5551900323814 /* TweetServiceOperationBuilder.swift */,
 				649704A71DC5271A00323814 /* TweetLoadingOperation.swift */,
 				649704AA1DC52C4700323814 /* TweetParsingOperation.swift */,
 				649704C21DC5451C00323814 /* TweetSavingOperation.swift */,
@@ -532,6 +536,7 @@
 				648CE3FB1DC4E1A200CBAC1E /* ServiceAssembly.swift in Sources */,
 				649704CD1DC5527400323814 /* TweetListViewInput.swift in Sources */,
 				64B278541DC4ACC3006DEFFB /* TweetApp.xcdatamodeld in Sources */,
+				649704D91DC5551900323814 /* TweetServiceOperationBuilder.swift in Sources */,
 				649704D31DC5530F00323814 /* TweetListPresenter.swift in Sources */,
 				648CE3E91DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift in Sources */,
 				649704B31DC532FA00323814 /* BaseOperation.swift in Sources */,
@@ -575,6 +580,7 @@
 				649704D11DC552A400323814 /* TweetListViewOutput.swift in Sources */,
 				6497041E1DC4EAAF00323814 /* AuthorizationModuleInput.swift in Sources */,
 				64B278641DC4ACC3006DEFFB /* TweetAppTests.swift in Sources */,
+				649704DA1DC5551900323814 /* TweetServiceOperationBuilder.swift in Sources */,
 				648CE3D51DC4D18B00CBAC1E /* NetworkClient.swift in Sources */,
 				649704321DC50C7A00323814 /* Router.swift in Sources */,
 				649704CB1DC5515B00323814 /* TweetListModuleAssembly.swift in Sources */,

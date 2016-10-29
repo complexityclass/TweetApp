@@ -16,17 +16,17 @@ class TweetListViewController: UIViewController, TweetListViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        
-//        let fetchRequest = NSFetchRequest(entityName: String(TweetObject))
-//        fetchRequest.sortDescriptors = TweetObject.defaultSortDescriptors
-//        fetchRequest.fetchBatchSize = 5
-//        
-//        let objects = try! appDelegate.coreDataStack.managedObjectContext.executeFetchRequest(fetchRequest)
-//        
-//        for object in objects {
-//            print("object = \(object)")
-//        }
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let fetchRequest = NSFetchRequest(entityName: String(TweetObject))
+        fetchRequest.sortDescriptors = TweetObject.defaultSortDescriptors
+        fetchRequest.fetchBatchSize = 5
+        
+        let objects = try! appDelegate.coreDataStack.managedObjectContext.executeFetchRequest(fetchRequest)
+        
+        for object in objects {
+            print("object = \(object)")
+        }
         
         output?.viewDidFinishLoading()
     }

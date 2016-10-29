@@ -15,6 +15,6 @@ class TweetListPresenter: TweetListViewOutput {
     
     // MARK: TweetListViewOutput
     func viewDidFinishLoading() {
-        print("Loaded!")
+        service?.loadTweets(nil)
     }
 }

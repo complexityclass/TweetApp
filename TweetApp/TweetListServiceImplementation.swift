@@ -15,15 +15,23 @@ class TweetListServiceImplementation: TweetListService {
     let networkClient: NetworkClient
     let requestBuilder: NetworkRequestConstructor
     var credentials = Credentials.self
+    var operationBuilder: TweetServiceOperationBuilder
+    var context: NSManagedObjectContext
     
     let operationQueue: NSOperationQueue = NSOperationQueue()
     
-    init(client: NetworkClient, constructor: NetworkRequestConstructor) {
+    init(client: NetworkClient,
+         constructor: NetworkRequestConstructor,
+         context: NSManagedObjectContext,
+         operationBuilder: TweetServiceOperationBuilder) {
+        
         self.networkClient = client
         self.requestBuilder = constructor
+        self.context = context
+        self.operationBuilder = operationBuilder
     }
     
-    func obtainTweets(maxId: Int?, completion: [AnyObject]) {
+    func loadTweets(maxId: Int?) {
         
         guard let apiURL = NSURL(string: API.Timeline.user_timeline.rawValue) else {
             return
@@ -37,35 +45,10 @@ class TweetListServiceImplementation: TweetListService {
         
         let request = requestBuilder.constructRequest(requestConfiguration)
         
-        let tweetLoadingOperation = TweetLoadingOperation()
-        tweetLoadingOperation.client = networkClient
-        tweetLoadingOperation.request = request
+        let operations = operationBuilder.buildTweetServiceOperations(request, client: networkClient, context: context)
         
-        let parsingOperation = TweetParsingOperation()
-        
-        let firstAdapterOperation = NSBlockOperation {
-            print("first connected")
-            parsingOperation.data = tweetLoadingOperation.obtainedData
+        for operation in operations {
+            operationQueue.addOperation(operation)
         }
-        
-        let savingOperation = TweetSavingOperation()
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        savingOperation.context = appDelegate.coreDataStack.managedObjectContext
-        
-        let secondAdapterOperation = NSBlockOperation {
-            print("second connected")
-            savingOperation.tweets = parsingOperation.mappedTweets
-        }
-        
-        firstAdapterOperation.addDependency(tweetLoadingOperation)
-        parsingOperation.addDependency(firstAdapterOperation)
-        secondAdapterOperation.addDependency(parsingOperation)
-        savingOperation.addDependency(secondAdapterOperation)
-        
-        operationQueue.addOperation(tweetLoadingOperation)
-        operationQueue.addOperation(firstAdapterOperation)
-        operationQueue.addOperation(parsingOperation)
-        operationQueue.addOperation(secondAdapterOperation)
-        operationQueue.addOperation(savingOperation)
     }
 }

@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import CoreData
 
 class ServiceAssembly {
+    
+    var defaultContext: NSManagedObjectContext!
     
     func authorizationService() -> AuthorizationServiceProtocol {
         let urlRequestFactory = URLRequestFactoryImplementation(configuration: URLRequestFactoryConfiguration())
@@ -21,7 +24,11 @@ class ServiceAssembly {
     func tweetListService() -> TweetListService {
         let urlRequestFactory = URLRequestFactoryImplementation(configuration: URLRequestFactoryConfiguration())
         let requestConstructor = NetworkRequestConstructorImplementation(urlRequestFactory: urlRequestFactory)
-        let tweetListService = TweetListServiceImplementation(client: networkClient, constructor: requestConstructor)
+        let operationBuilder = TweetServiceOperationBuilderImplementation()
+        let tweetListService = TweetListServiceImplementation(client: networkClient,
+                                                              constructor: requestConstructor,
+                                                              context: defaultContext,
+                                                              operationBuilder: operationBuilder)
         
         return tweetListService
     }
