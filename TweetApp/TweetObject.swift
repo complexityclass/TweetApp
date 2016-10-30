@@ -25,4 +25,9 @@ class TweetObject: ManagedObject, ManagedObjectType {
         
         return tweetObject
     }
+    
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        return [dateSortDescriptor]
+    }
 }

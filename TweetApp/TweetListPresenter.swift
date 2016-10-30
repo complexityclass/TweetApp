@@ -21,7 +21,7 @@ class TweetListPresenter: TweetListViewOutput {
     // MARK: TweetListViewOutput
     
     func viewDidFinishLoading() {
-        service?.loadTweets(nil)
+        service?.loadTweets()
     }
     
     func setupDataSource(tableView: UITableView) {
@@ -30,6 +30,8 @@ class TweetListPresenter: TweetListViewOutput {
         fetchRequest.sortDescriptors = TweetObject.defaultSortDescriptors
         fetchRequest.fetchBatchSize = 20
         fetchRequest.returnsObjectsAsFaults = false
+        fetchRequest.sortDescriptors = TweetObject.defaultSortDescriptors
+        
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                   managedObjectContext: context,
                                                                   sectionNameKeyPath: nil,
@@ -45,7 +47,7 @@ class TweetListPresenter: TweetListViewOutput {
     }
     
     func didRequestDataReload() {
-        service?.loadTweets(nil)
+        service?.loadTweets()
     }
 }
 

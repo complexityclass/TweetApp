@@ -18,6 +18,8 @@ class TweetListServiceImplementation: TweetListService {
     var operationBuilder: TweetServiceOperationBuilder
     var context: NSManagedObjectContext
     
+    var currentCursor: Int?
+    private var totalTweetsCount: Int = 0
     private let observers: NSMapTable = NSMapTable(keyOptions: .StrongMemory, valueOptions: .WeakMemory, capacity: 5)
     
     let operationQueue: NSOperationQueue = NSOperationQueue()
@@ -33,7 +35,7 @@ class TweetListServiceImplementation: TweetListService {
         self.operationBuilder = operationBuilder
     }
     
-    func loadTweets(maxId: Int?) {
+    func loadTweets() {
         
         guard let apiURL = NSURL(string: API.Timeline.user_timeline.rawValue) else {
             return
@@ -43,10 +45,9 @@ class TweetListServiceImplementation: TweetListService {
                                                         requestType: .GET,
                                                         parameters: nil,
                                                         headers: credentials.requestHeaders,
-                                                        urlParameters: credentials.urlParameters)
+                                                        urlParameters: credentials.urlParameters(currentCursor, count: totalTweetsCount))
         
         let request = requestBuilder.constructRequest(requestConfiguration)
-        
         let operations = operationBuilder.buildTweetServiceOperations(request, client: networkClient, context: context)
         
         for operation in operations {
@@ -62,7 +63,9 @@ class TweetListServiceImplementation: TweetListService {
 }
 
 extension TweetListServiceImplementation: TweetSavingOperationDelegate {
-    func savingOperationDidFinishWithSaveElementsCount(count: Int) {
+    func savingOperationDidFinishWithSaveElementsCount(count: Int, cursor: Int) {
+        totalTweetsCount += count
+        currentCursor = cursor
         let enumerator = observers.objectEnumerator()
         while let observer = enumerator?.nextObject() as? TweetListServiceObserver  {
             observer.serviceActualizedData()

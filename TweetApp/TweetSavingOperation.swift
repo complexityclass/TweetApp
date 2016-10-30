@@ -11,9 +11,8 @@ import CoreData
 
 protocol TweetSavingOperationDelegate: class {
     
-    func savingOperationDidFinishWithSaveElementsCount(count: Int)
+    func savingOperationDidFinishWithSaveElementsCount(count: Int, cursor: Int)
 }
-
 
 class TweetSavingOperation: BaseOperation {
     
@@ -30,14 +29,19 @@ class TweetSavingOperation: BaseOperation {
         }
         
         var saveCount = 0
+        var cursor = Int(tweets.first?.idString ?? "\(Int.max)")!
         context.performChanges {
             for tweet in tweets {
                 if self.isNewTweet(tweet.idString) {
                     TweetObject.insertInContext(context, tweet: tweet)
+                    let currentId = Int(tweet.idString) ?? 0
+                    if currentId < cursor {
+                        cursor = currentId
+                    }
                     saveCount += 1
                 }
             }
-            self.delegate?.savingOperationDidFinishWithSaveElementsCount(saveCount)
+            self.delegate?.savingOperationDidFinishWithSaveElementsCount(saveCount, cursor: cursor)
         }
         
         finished = true
