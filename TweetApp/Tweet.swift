@@ -11,7 +11,7 @@ import Foundation
 struct Tweet {
     
     var date: NSDate?
-    let author: String
+    var author: String?
     let avatar: NSURL
     let text: String
 }
@@ -24,7 +24,13 @@ extension Tweet {
         
         self.text = text
         self.avatar = NSURL()
-        self.author = ""
+        
+        if let user = dictionary["user"],
+           let screenName = user["screen_name"] as? String {
+            self.author = screenName
+        }
+        
+        
         self.date = formatDate(dictionary["created_at"] as? String)
     }
     
@@ -34,14 +40,13 @@ extension Tweet {
         
         return dateFormatter.dateFromString(dateString)
     }
-    
 }
 
 private let dateFormatter = NSDateFormatter()
 
 extension Tweet: CustomStringConvertible {
     var description: String {
-        return "date: \(date ?? "no date"),  text: \(text)"
+        return " date: \(date ?? "no date")\n author: \(author ?? "no author")\n text: \(text)"
     }
 }
 
