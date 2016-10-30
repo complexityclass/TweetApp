@@ -17,6 +17,7 @@ class TweetListViewController: UIViewController, TweetListViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTableView(tableView)
         output?.setupDataSource(tableView)
         output?.viewDidFinishLoading()
     }
@@ -26,9 +27,13 @@ class TweetListViewController: UIViewController, TweetListViewInput {
         // Dispose of any resources that can be recreated.
     }
     
+    private func setupTableView(tableView: UITableView) {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+    }
+    
     // MARK: TweetListViewInput
     
     func setupInitialState() {
-        
     }
 }
