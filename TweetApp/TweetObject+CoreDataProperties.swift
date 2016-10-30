@@ -18,5 +18,5 @@ extension TweetObject {
     @NSManaged var date: NSDate?
     @NSManaged var avatar: String?
     @NSManaged var text: String?
-
+    @NSManaged var idString: String
 }

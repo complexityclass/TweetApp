@@ -17,6 +17,7 @@ class TweetObject: ManagedObject, ManagedObjectType {
     
     static func insertInContext(context: NSManagedObjectContext, tweet: Tweet) -> TweetObject {
         let tweetObject: TweetObject = context.insertObject()
+        tweetObject.idString = tweet.idString
         tweetObject.text = tweet.text
         tweetObject.author = tweet.author
         tweetObject.date = tweet.date

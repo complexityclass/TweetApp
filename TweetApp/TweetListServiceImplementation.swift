@@ -18,6 +18,8 @@ class TweetListServiceImplementation: TweetListService {
     var operationBuilder: TweetServiceOperationBuilder
     var context: NSManagedObjectContext
     
+    private let observers: NSMapTable = NSMapTable(keyOptions: .StrongMemory, valueOptions: .WeakMemory, capacity: 5)
+    
     let operationQueue: NSOperationQueue = NSOperationQueue()
     
     init(client: NetworkClient,
@@ -49,6 +51,21 @@ class TweetListServiceImplementation: TweetListService {
         
         for operation in operations {
             operationQueue.addOperation(operation)
+        }
+    }
+    
+    let object = NSObject()
+    
+    func addObserver(observer: TweetListServiceObserver) {
+        observers.setObject(observer, forKey: String(observer.dynamicType))
+    }
+}
+
+extension TweetListServiceImplementation: TweetSavingOperationDelegate {
+    func savingOperationDidFinishWithSaveElementsCount(count: Int) {
+        let enumerator = observers.objectEnumerator()
+        while let observer = enumerator?.nextObject() as? TweetListServiceObserver  {
+            observer.serviceActualizedData()
         }
     }
 }

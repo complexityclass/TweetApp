@@ -11,4 +11,11 @@ import Foundation
 protocol TweetListService {
     
     func loadTweets(maxId: Int?)
+    
+    func addObserver(observer: TweetListServiceObserver)
+}
+
+protocol TweetListServiceObserver: class {
+    
+    func serviceActualizedData()
 }

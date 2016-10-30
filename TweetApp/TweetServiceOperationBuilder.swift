@@ -16,6 +16,8 @@ protocol TweetServiceOperationBuilder {
 
 class TweetServiceOperationBuilderImplementation: TweetServiceOperationBuilder {
     
+    var tweetListService: TweetListServiceImplementation?
+    
     func buildTweetServiceOperations(request: NSURLRequest, client: NetworkClient, context: NSManagedObjectContext) -> [NSOperation] {
         
         let tweetLoadingOperation = TweetLoadingOperation()
@@ -30,6 +32,8 @@ class TweetServiceOperationBuilderImplementation: TweetServiceOperationBuilder {
         
         let savingOperation = TweetSavingOperation()
         savingOperation.context = context
+        savingOperation.delegate = tweetListService
+        
         
         let secondAdapterOperation = NSBlockOperation {
             savingOperation.tweets = parsingOperation.mappedTweets

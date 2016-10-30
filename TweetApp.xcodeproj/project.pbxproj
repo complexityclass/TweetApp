@@ -355,6 +355,7 @@
 		649704AD1DC531CE00323814 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				64B278521DC4ACC3006DEFFB /* TweetApp.xcdatamodeld */,
 				649704B51DC53ED900323814 /* TweetObject+CoreDataProperties.swift */,
 				649704B61DC53ED900323814 /* TweetObject.swift */,
 				649704AE1DC531E200323814 /* Tweet.swift */,
@@ -438,7 +439,6 @@
 				64B278551DC4ACC3006DEFFB /* Assets.xcassets */,
 				64B278571DC4ACC3006DEFFB /* LaunchScreen.storyboard */,
 				64B2785A1DC4ACC3006DEFFB /* Info.plist */,
-				64B278521DC4ACC3006DEFFB /* TweetApp.xcdatamodeld */,
 			);
 			path = TweetApp;
 			sourceTree = "<group>";

@@ -16,9 +16,12 @@ class TweetListModuleAssembly: NSObject, ModuleAssembly {
         
         let presenter = TweetListPresenter()
         presenter.view = viewController
-        presenter.service = serviceAssembly()?.tweetListService()
+        
+        let tweetListService = serviceAssembly()?.tweetListService()
+        presenter.service = tweetListService
         presenter.context = defaultContext()
         
         viewController.output = presenter
+        tweetListService?.addObserver(presenter)
     }
 }

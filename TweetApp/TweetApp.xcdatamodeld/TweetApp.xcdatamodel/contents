@@ -4,9 +4,10 @@
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="idString" attributeType="String" defaultValueString="111" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TweetObject" positionX="-2016" positionY="-3375" width="128" height="103"/>
+        <element name="TweetObject" positionX="-3789" positionY="-4887" width="128" height="118"/>
     </elements>
 </model>

@@ -61,3 +61,9 @@ extension TweetListPresenter: DataSourceDelegate {
         return TweetCell.cellIdentifier
     }
 }
+
+extension TweetListPresenter: TweetListServiceObserver {
+    func serviceActualizedData() {
+        view?.shouldEndRefreshing()
+    }
+}
