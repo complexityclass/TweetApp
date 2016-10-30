@@ -89,6 +89,10 @@
 		64B278561DC4ACC3006DEFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B278551DC4ACC3006DEFFB /* Assets.xcassets */; };
 		64B278591DC4ACC3006DEFFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B278571DC4ACC3006DEFFB /* LaunchScreen.storyboard */; };
 		64B278641DC4ACC3006DEFFB /* TweetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B278631DC4ACC3006DEFFB /* TweetAppTests.swift */; };
+		64DAB1741DC5FF3200960004 /* FetchedResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1731DC5FF3200960004 /* FetchedResultsDataProvider.swift */; };
+		64DAB1751DC5FF3200960004 /* FetchedResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1731DC5FF3200960004 /* FetchedResultsDataProvider.swift */; };
+		64DAB1781DC5FF7700960004 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1771DC5FF7700960004 /* DataProvider.swift */; };
+		64DAB1791DC5FF7700960004 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1771DC5FF7700960004 /* DataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +154,8 @@
 		64B2785F1DC4ACC3006DEFFB /* TweetAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B278631DC4ACC3006DEFFB /* TweetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetAppTests.swift; sourceTree = "<group>"; };
 		64B278651DC4ACC3006DEFFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64DAB1731DC5FF3200960004 /* FetchedResultsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsDataProvider.swift; sourceTree = "<group>"; };
+		64DAB1771DC5FF7700960004 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +249,7 @@
 		648CE3FD1DC4E37300CBAC1E /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				64DAB1761DC5FF5300960004 /* Common */,
 				649704331DC50E5200323814 /* TweetList module */,
 				648CE3FE1DC4E38200CBAC1E /* Authorization module */,
 			);
@@ -416,6 +423,15 @@
 			path = TweetAppTests;
 			sourceTree = "<group>";
 		};
+		64DAB1761DC5FF5300960004 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				64DAB1731DC5FF3200960004 /* FetchedResultsDataProvider.swift */,
+				64DAB1771DC5FF7700960004 /* DataProvider.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,6 +542,7 @@
 				649704C01DC53FC300323814 /* CoreDataStack.swift in Sources */,
 				649704D61DC5537100323814 /* TweetListModuleInput.swift in Sources */,
 				6497043C1DC5185B00323814 /* TweetListViewController.swift in Sources */,
+				64DAB1741DC5FF3200960004 /* FetchedResultsDataProvider.swift in Sources */,
 				648CE3DF1DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift in Sources */,
 				649704311DC50C7A00323814 /* Router.swift in Sources */,
 				649704AB1DC52C4700323814 /* TweetParsingOperation.swift in Sources */,
@@ -540,6 +557,7 @@
 				649704D31DC5530F00323814 /* TweetListPresenter.swift in Sources */,
 				648CE3E91DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift in Sources */,
 				649704B31DC532FA00323814 /* BaseOperation.swift in Sources */,
+				64DAB1781DC5FF7700960004 /* DataProvider.swift in Sources */,
 				649704271DC4EDB500323814 /* ModuleAssembly.swift in Sources */,
 				649704391DC5102500323814 /* TweetListServiceImplementation.swift in Sources */,
 				64B2784C1DC4ACC3006DEFFB /* AppDelegate.swift in Sources */,
@@ -582,6 +600,7 @@
 				64B278641DC4ACC3006DEFFB /* TweetAppTests.swift in Sources */,
 				649704DA1DC5551900323814 /* TweetServiceOperationBuilder.swift in Sources */,
 				648CE3D51DC4D18B00CBAC1E /* NetworkClient.swift in Sources */,
+				64DAB1791DC5FF7700960004 /* DataProvider.swift in Sources */,
 				649704321DC50C7A00323814 /* Router.swift in Sources */,
 				649704CB1DC5515B00323814 /* TweetListModuleAssembly.swift in Sources */,
 				648CE3F81DC4DD4E00CBAC1E /* APIStructure.swift in Sources */,
@@ -598,6 +617,7 @@
 				649704C41DC5451C00323814 /* TweetSavingOperation.swift in Sources */,
 				649704B81DC53ED900323814 /* TweetObject+CoreDataProperties.swift in Sources */,
 				649704AC1DC52C4700323814 /* TweetParsingOperation.swift in Sources */,
+				64DAB1751DC5FF3200960004 /* FetchedResultsDataProvider.swift in Sources */,
 				648CE3DD1DC4D57900CBAC1E /* NetworkRequestConstructor.swift in Sources */,
 				649704D41DC5530F00323814 /* TweetListPresenter.swift in Sources */,
 				648CE3F51DC4DBF400CBAC1E /* TwitterAuthorizationService.swift in Sources */,
