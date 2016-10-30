@@ -46,6 +46,6 @@ extension TweetListPresenter: DataProviderDelegate {
 
 extension TweetListPresenter: DataSourceDelegate {
     func cellIdentifierForObject(object: Object) -> String {
-        return "Tweet"
+        return TweetCell.cellIdentifier
     }
 }

@@ -63,9 +63,51 @@
                     <view key="view" contentMode="scaleToFill" id="Snr-Eo-AGH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ywa-ZY-X6f">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" id="12g-ym-LvC" customClass="TweetCell" customModule="TweetApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="12g-ym-LvC" id="X59-xl-tE8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDg-tP-fg5">
+                                                    <rect key="frame" x="18" y="8" width="339" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PDg-tP-fg5" firstAttribute="top" secondItem="X59-xl-tE8" secondAttribute="topMargin" id="PRp-xv-vwX"/>
+                                                <constraint firstItem="PDg-tP-fg5" firstAttribute="leading" secondItem="X59-xl-tE8" secondAttribute="leadingMargin" constant="10" id="Qxx-s9-CGL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PDg-tP-fg5" secondAttribute="trailing" constant="10" id="S7L-fM-ckK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PDg-tP-fg5" secondAttribute="bottom" id="cHS-rw-B2B"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="PDg-tP-fg5" id="aBu-MC-PiJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gab-dL-Xde" firstAttribute="top" secondItem="ywa-ZY-X6f" secondAttribute="bottom" id="NGe-IF-EEP"/>
+                            <constraint firstItem="ywa-ZY-X6f" firstAttribute="top" secondItem="D6a-Dl-wn0" secondAttribute="bottom" id="Tbo-vc-7WL"/>
+                            <constraint firstItem="ywa-ZY-X6f" firstAttribute="leading" secondItem="Snr-Eo-AGH" secondAttribute="leading" id="b5m-6s-HQ4"/>
+                            <constraint firstAttribute="trailing" secondItem="ywa-ZY-X6f" secondAttribute="trailing" id="jjA-jW-6Dv"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="ywa-ZY-X6f" id="iPU-I1-w4q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="372-7F-Fs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="9nE-D1-2jE" customClass="TweetListModuleAssembly" customModule="TweetApp" customModuleProvider="target">

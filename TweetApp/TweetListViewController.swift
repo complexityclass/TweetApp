@@ -12,10 +12,12 @@ import CoreData
 class TweetListViewController: UIViewController, TweetListViewInput {
     
     var output: TweetListViewOutput?
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        output?.setupDataSource(tableView)
         output?.viewDidFinishLoading()
     }
 

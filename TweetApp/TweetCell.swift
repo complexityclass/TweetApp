@@ -10,7 +10,12 @@ import UIKit
 
 class TweetCell: UITableViewCell, ConfigurableCell {
     
+    @IBOutlet weak var label: UILabel!
+    
     func configureWithModel(model: TweetObject) {
+        label.text = model.text
     }
+    
+    static let cellIdentifier = String(TweetCell)
 }
 

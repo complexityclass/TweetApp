@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 protocol ModuleAssembly: class {
     
     func serviceAssembly() -> ServiceAssembly?
+    
+    func defaultContext() -> NSManagedObjectContext
 }
 
 extension ModuleAssembly {
@@ -20,5 +23,13 @@ extension ModuleAssembly {
         }
         
         return appDelegate.serviceAssembly
+    }
+    
+    func defaultContext() -> NSManagedObjectContext {
+        guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate  else {
+            fatalError("Appdelegate is nil")
+        }
+        
+        return appDelegate.coreDataStack.managedObjectContext
     }
 }
