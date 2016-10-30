@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import CoreData
 
 protocol TweetListViewInput: class {
     
     func setupInitialState()
+    
+    func performTransitionToTweetViewWithObjectID(objectID: NSManagedObjectID)
 }

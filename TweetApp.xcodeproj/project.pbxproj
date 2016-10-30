@@ -99,6 +99,8 @@
 		64DAB17F1DC60D3C00960004 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB17D1DC60D3C00960004 /* ConfigurableCell.swift */; };
 		64DAB1821DC61C6000960004 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1811DC61C6000960004 /* TweetCell.swift */; };
 		64DAB1831DC61C6000960004 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1811DC61C6000960004 /* TweetCell.swift */; };
+		64DAB1891DC63EA000960004 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1881DC63EA000960004 /* TweetViewController.swift */; };
+		64DAB18A1DC63EA000960004 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1881DC63EA000960004 /* TweetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +167,7 @@
 		64DAB17A1DC60CC100960004 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		64DAB17D1DC60D3C00960004 /* ConfigurableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		64DAB1811DC61C6000960004 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		64DAB1881DC63EA000960004 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +263,7 @@
 			children = (
 				64DAB1761DC5FF5300960004 /* Common */,
 				649704331DC50E5200323814 /* TweetList module */,
+				64DAB1841DC63D7800960004 /* Tweet module */,
 				648CE3FE1DC4E38200CBAC1E /* Authorization module */,
 			);
 			name = "Presentation Layer";
@@ -452,6 +456,38 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		64DAB1841DC63D7800960004 /* Tweet module */ = {
+			isa = PBXGroup;
+			children = (
+				64DAB1851DC63D9100960004 /* Assembly */,
+				64DAB1871DC63DA200960004 /* Presenter */,
+				64DAB1861DC63D9C00960004 /* View */,
+			);
+			name = "Tweet module";
+			sourceTree = "<group>";
+		};
+		64DAB1851DC63D9100960004 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
+		64DAB1861DC63D9C00960004 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64DAB1881DC63EA000960004 /* TweetViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		64DAB1871DC63DA200960004 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -583,6 +619,7 @@
 				649704271DC4EDB500323814 /* ModuleAssembly.swift in Sources */,
 				649704391DC5102500323814 /* TweetListServiceImplementation.swift in Sources */,
 				64B2784C1DC4ACC3006DEFFB /* AppDelegate.swift in Sources */,
+				64DAB1891DC63EA000960004 /* TweetViewController.swift in Sources */,
 				648CE3DC1DC4D57900CBAC1E /* NetworkRequestConstructor.swift in Sources */,
 				6497041A1DC4E97A00323814 /* AuthorizationModuleAssembly.swift in Sources */,
 				648CE3D71DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */,
@@ -607,6 +644,7 @@
 			files = (
 				649704211DC4EAE300323814 /* AuthorizationPresenter.swift in Sources */,
 				648CE3E61DC4D70D00CBAC1E /* URLRequestFactoryImplementation.swift in Sources */,
+				64DAB18A1DC63EA000960004 /* TweetViewController.swift in Sources */,
 				648CE3F21DC4DB8500CBAC1E /* AuthorizationServiceProtocol.swift in Sources */,
 				648CE3E01DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift in Sources */,
 				649704BA1DC53ED900323814 /* TweetObject.swift in Sources */,

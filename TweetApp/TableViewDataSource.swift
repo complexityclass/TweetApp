@@ -17,7 +17,7 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
 where Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.Model == Data.Object>: NSObject, UITableViewDataSource {
     
     private let tableView: UITableView
-    private let dataProvider: Data
+    let dataProvider: Data
     private weak var delegate: Delegate!
     
     required init(tableView: UITableView, dataProvider: Data, delegate: Delegate) {
