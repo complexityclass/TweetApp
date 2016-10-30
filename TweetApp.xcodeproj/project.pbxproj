@@ -101,6 +101,16 @@
 		64DAB1831DC61C6000960004 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1811DC61C6000960004 /* TweetCell.swift */; };
 		64DAB1891DC63EA000960004 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1881DC63EA000960004 /* TweetViewController.swift */; };
 		64DAB18A1DC63EA000960004 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1881DC63EA000960004 /* TweetViewController.swift */; };
+		64DAB18C1DC64B3C00960004 /* TweetViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB18B1DC64B3C00960004 /* TweetViewInput.swift */; };
+		64DAB18D1DC64B3C00960004 /* TweetViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB18B1DC64B3C00960004 /* TweetViewInput.swift */; };
+		64DAB18F1DC64B7400960004 /* TweetViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB18E1DC64B7400960004 /* TweetViewPresenter.swift */; };
+		64DAB1901DC64B7400960004 /* TweetViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB18E1DC64B7400960004 /* TweetViewPresenter.swift */; };
+		64DAB1921DC64B8500960004 /* TweetViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1911DC64B8500960004 /* TweetViewOutput.swift */; };
+		64DAB1931DC64B8500960004 /* TweetViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1911DC64B8500960004 /* TweetViewOutput.swift */; };
+		64DAB1951DC6525F00960004 /* TweetViewModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1941DC6525F00960004 /* TweetViewModuleInput.swift */; };
+		64DAB1961DC6525F00960004 /* TweetViewModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1941DC6525F00960004 /* TweetViewModuleInput.swift */; };
+		64DAB1981DC652A000960004 /* TweetViewModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1971DC652A000960004 /* TweetViewModuleAssembly.swift */; };
+		64DAB1991DC652A000960004 /* TweetViewModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1971DC652A000960004 /* TweetViewModuleAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +178,11 @@
 		64DAB17D1DC60D3C00960004 /* ConfigurableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		64DAB1811DC61C6000960004 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		64DAB1881DC63EA000960004 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		64DAB18B1DC64B3C00960004 /* TweetViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewInput.swift; sourceTree = "<group>"; };
+		64DAB18E1DC64B7400960004 /* TweetViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewPresenter.swift; sourceTree = "<group>"; };
+		64DAB1911DC64B8500960004 /* TweetViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewOutput.swift; sourceTree = "<group>"; };
+		64DAB1941DC6525F00960004 /* TweetViewModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewModuleInput.swift; sourceTree = "<group>"; };
+		64DAB1971DC652A000960004 /* TweetViewModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewModuleAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -469,6 +484,7 @@
 		64DAB1851DC63D9100960004 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				64DAB1971DC652A000960004 /* TweetViewModuleAssembly.swift */,
 			);
 			name = Assembly;
 			sourceTree = "<group>";
@@ -476,7 +492,9 @@
 		64DAB1861DC63D9C00960004 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64DAB1911DC64B8500960004 /* TweetViewOutput.swift */,
 				64DAB1881DC63EA000960004 /* TweetViewController.swift */,
+				64DAB18B1DC64B3C00960004 /* TweetViewInput.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -484,6 +502,8 @@
 		64DAB1871DC63DA200960004 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				64DAB18E1DC64B7400960004 /* TweetViewPresenter.swift */,
+				64DAB1941DC6525F00960004 /* TweetViewModuleInput.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -604,8 +624,11 @@
 				64DAB1821DC61C6000960004 /* TweetCell.swift in Sources */,
 				649704311DC50C7A00323814 /* Router.swift in Sources */,
 				649704AB1DC52C4700323814 /* TweetParsingOperation.swift in Sources */,
+				64DAB18F1DC64B7400960004 /* TweetViewPresenter.swift in Sources */,
+				64DAB18C1DC64B3C00960004 /* TweetViewInput.swift in Sources */,
 				649704D01DC552A400323814 /* TweetListViewOutput.swift in Sources */,
 				649704B71DC53ED900323814 /* TweetObject+CoreDataProperties.swift in Sources */,
+				64DAB1951DC6525F00960004 /* TweetViewModuleInput.swift in Sources */,
 				649704231DC4EB7B00323814 /* AuthorizationViewOutput.swift in Sources */,
 				648CE4031DC4E3E300CBAC1E /* AuthorizationViewController.swift in Sources */,
 				648CE3FB1DC4E1A200CBAC1E /* ServiceAssembly.swift in Sources */,
@@ -628,6 +651,8 @@
 				649704BD1DC53F5100323814 /* ManagedObjectType.swift in Sources */,
 				64DAB17B1DC60CC100960004 /* TableViewDataSource.swift in Sources */,
 				649704A81DC5271A00323814 /* TweetLoadingOperation.swift in Sources */,
+				64DAB1981DC652A000960004 /* TweetViewModuleAssembly.swift in Sources */,
+				64DAB1921DC64B8500960004 /* TweetViewOutput.swift in Sources */,
 				649704B91DC53ED900323814 /* TweetObject.swift in Sources */,
 				648CE3E21DC4D6BC00CBAC1E /* URLRequestFactory.swift in Sources */,
 				649704CA1DC5515B00323814 /* TweetListModuleAssembly.swift in Sources */,
@@ -647,6 +672,7 @@
 				64DAB18A1DC63EA000960004 /* TweetViewController.swift in Sources */,
 				648CE3F21DC4DB8500CBAC1E /* AuthorizationServiceProtocol.swift in Sources */,
 				648CE3E01DC4D5EE00CBAC1E /* NetworkRequestConstructorImplementation.swift in Sources */,
+				64DAB18D1DC64B3C00960004 /* TweetViewInput.swift in Sources */,
 				649704BA1DC53ED900323814 /* TweetObject.swift in Sources */,
 				648CE3D81DC4D25C00CBAC1E /* NetworkClientImplementation.swift in Sources */,
 				648CE3EA1DC4D74D00CBAC1E /* URLRequestFactoryConfiguration.swift in Sources */,
@@ -662,6 +688,7 @@
 				649704D11DC552A400323814 /* TweetListViewOutput.swift in Sources */,
 				6497041E1DC4EAAF00323814 /* AuthorizationModuleInput.swift in Sources */,
 				64B278641DC4ACC3006DEFFB /* TweetAppTests.swift in Sources */,
+				64DAB1931DC64B8500960004 /* TweetViewOutput.swift in Sources */,
 				649704DA1DC5551900323814 /* TweetServiceOperationBuilder.swift in Sources */,
 				648CE3D51DC4D18B00CBAC1E /* NetworkClient.swift in Sources */,
 				64DAB1791DC5FF7700960004 /* DataProvider.swift in Sources */,
@@ -669,12 +696,15 @@
 				649704CB1DC5515B00323814 /* TweetListModuleAssembly.swift in Sources */,
 				648CE3F81DC4DD4E00CBAC1E /* APIStructure.swift in Sources */,
 				649704371DC50EB500323814 /* TweetListService.swift in Sources */,
+				64DAB1901DC64B7400960004 /* TweetViewPresenter.swift in Sources */,
 				649704251DC4ED7900323814 /* AppDelegate.swift in Sources */,
 				649704D71DC5537100323814 /* TweetListModuleInput.swift in Sources */,
 				6497043A1DC5102500323814 /* TweetListServiceImplementation.swift in Sources */,
 				649704281DC4EDB500323814 /* ModuleAssembly.swift in Sources */,
 				6497041B1DC4E97A00323814 /* AuthorizationModuleAssembly.swift in Sources */,
 				648CE3E31DC4D6BC00CBAC1E /* URLRequestFactory.swift in Sources */,
+				64DAB1991DC652A000960004 /* TweetViewModuleAssembly.swift in Sources */,
+				64DAB1961DC6525F00960004 /* TweetViewModuleInput.swift in Sources */,
 				649704B01DC531E200323814 /* Tweet.swift in Sources */,
 				649704B41DC532FA00323814 /* BaseOperation.swift in Sources */,
 				648CE3FC1DC4E1A200CBAC1E /* ServiceAssembly.swift in Sources */,

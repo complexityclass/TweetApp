@@ -156,7 +156,7 @@
             </objects>
             <point key="canvasLocation" x="947.5" y="390.5"/>
         </scene>
-        <!--Tweet View Controller-->
+        <!--View Controller-->
         <scene sceneID="5YT-Mu-e6O">
             <objects>
                 <viewController id="AFq-rU-Gbw" customClass="TweetViewController" customModule="TweetApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,6 +172,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFU-1t-eTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="KlN-bK-DCL" customClass="TweetViewModuleAssembly" customModule="TweetApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="AFq-rU-Gbw" id="MeV-Sy-Khx"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1463.5" y="390.5"/>
         </scene>
