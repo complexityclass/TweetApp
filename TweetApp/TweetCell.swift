@@ -10,11 +10,28 @@ import UIKit
 
 class TweetCell: UITableViewCell, ConfigurableCell {
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var tweetTextLabel: UILabel!
     
     func configureWithModel(model: TweetObject) {
-        label.text = model.text
+        authorNameLabel.text = model.author ?? "author"
+        if let date = model.date {
+            dateLabel.text = sharedDateFormatter.stringFromDate(date)
+        }
+        tweetTextLabel.text = model.text
     }
+    
+    private let sharedDateFormatter: NSDateFormatter = {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.timeStyle = .ShortStyle
+        dateFormatter.doesRelativeDateFormatting = true
+        dateFormatter.formattingContext = .Standalone
+        
+        return dateFormatter
+    }()
     
     static let cellIdentifier = String(TweetCell)
 }
