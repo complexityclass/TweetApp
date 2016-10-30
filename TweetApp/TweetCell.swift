@@ -14,8 +14,18 @@ class TweetCell: UITableViewCell, ConfigurableCell {
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
+    var tapGestureRecognizer: UITapGestureRecognizer!
+    
+    private(set) var model: TweetObject?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        addGestureRecognizer(tapGestureRecognizer)
+    }
     
     func configureWithModel(model: TweetObject) {
+        self.model = model
         authorNameLabel.text = model.author ?? "author"
         if let date = model.date {
             dateLabel.text = sharedDateFormatter.stringFromDate(date)
@@ -39,5 +49,10 @@ class TweetCell: UITableViewCell, ConfigurableCell {
     }
     
     static let cellIdentifier = String(TweetCell)
+    
+    func handleTap(sender: AnyObject) {
+        UIApplication.sharedApplication().sendAction(#selector(TweetListViewController.didChooseTweetCell(_:)),
+                                                     to: nil, from: self, forEvent: nil)
+    }
 }
 

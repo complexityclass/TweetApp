@@ -36,6 +36,12 @@ class TweetListPresenter: TweetListViewOutput {
         let dataProvider = FetchedResultsDataProvider(fetchedResultsController: fetchedResultsController, delegate: self)
         dataSource = TableViewDataSource(tableView: tableView, dataProvider: dataProvider, delegate: self)
     }
+    
+    func viewDidSelectCellAtPath(indexPath: NSIndexPath) {
+        let object = dataSource.dataProvider.objectAtIndexPath(indexPath)
+        let objectID = object.objectID
+        view?.performTransitionToTweetViewWithObjectID(objectID)
+    }
 }
 
 extension TweetListPresenter: DataProviderDelegate {

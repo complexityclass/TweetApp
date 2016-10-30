@@ -1,5 +1,5 @@
 //
-//  TweetListViewInput.swift
+//  TweetViewInput.swift
 //  TweetApp
 //
 //  Created by Popov Valery on 30/10/2016.
@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import CoreData
 
-protocol TweetListViewInput: class {
+protocol TweetViewInput: class {
     
     func setupInitialState()
     
-    func performTransitionToTweetViewWithObjectID(objectID: NSManagedObjectID)
+    func setupWithModel(tweetObject: TweetObject)
 }

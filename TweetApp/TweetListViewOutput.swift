@@ -13,4 +13,6 @@ protocol TweetListViewOutput {
     func viewDidFinishLoading()
     
     func setupDataSource(tableView: UITableView)
+    
+    func viewDidSelectCellAtPath(indexPath: NSIndexPath)
 }
