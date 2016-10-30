@@ -19,10 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        serviceAssembly.tweetListService().obtainTweets(nil, completion: [])
-        
-        //serviceAssembly.tweetListService().sendRequest()
+        serviceAssembly.defaultContext = coreDataStack.managedObjectContext
         
         return true
     }

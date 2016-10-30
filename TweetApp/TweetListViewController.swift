@@ -9,26 +9,17 @@
 import UIKit
 import CoreData
 
-class TweetListViewController: UIViewController {
+class TweetListViewController: UIViewController, TweetListViewInput {
+    
+    var output: TweetListViewOutput?
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let fetchRequest = NSFetchRequest(entityName: String(TweetObject))
-        fetchRequest.sortDescriptors = TweetObject.defaultSortDescriptors
-        fetchRequest.fetchBatchSize = 5
-        
-        let objects = try! appDelegate.coreDataStack.managedObjectContext.executeFetchRequest(fetchRequest)
-        
-        for object in objects {
-            print("object = \(object)")
-        }
-        
-        
-        
-        // Do any additional setup after loading the view.
+        setupTableView(tableView)
+        output?.setupDataSource(tableView)
+        output?.viewDidFinishLoading()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +27,13 @@ class TweetListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setupTableView(tableView: UITableView) {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
     }
-    */
-
+    
+    // MARK: TweetListViewInput
+    
+    func setupInitialState() {
+    }
 }
