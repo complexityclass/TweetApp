@@ -21,11 +21,14 @@ class TweetCell: UITableViewCell, ConfigurableCell {
             dateLabel.text = sharedDateFormatter.stringFromDate(date)
         }
         tweetTextLabel.text = model.text
+        
+        setNeedsUpdateConstraints()
+        updateConstraintsIfNeeded()
     }
     
     private let sharedDateFormatter: NSDateFormatter = {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.dateStyle = .ShortStyle
         dateFormatter.timeStyle = .ShortStyle
         dateFormatter.doesRelativeDateFormatting = true
         dateFormatter.formattingContext = .Standalone
