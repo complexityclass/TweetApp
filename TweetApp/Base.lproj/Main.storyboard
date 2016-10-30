@@ -124,6 +124,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorNameLabel" destination="ufv-Pi-hAf" id="Ft4-wz-v7R"/>
+                                            <outlet property="avatarImageView" destination="qTR-uo-c5y" id="daz-lm-VTy"/>
                                             <outlet property="dateLabel" destination="n48-ff-Cyh" id="tad-66-VbO"/>
                                             <outlet property="tweetTextLabel" destination="KdU-OA-cef" id="YxL-24-4jS"/>
                                         </connections>

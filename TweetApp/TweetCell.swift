@@ -20,10 +20,9 @@ class TweetCell: UITableViewCell, ConfigurableCell {
         if let date = model.date {
             dateLabel.text = sharedDateFormatter.stringFromDate(date)
         }
-        tweetTextLabel.text = model.text
         
-        setNeedsUpdateConstraints()
-        updateConstraintsIfNeeded()
+        avatarImageView.downloadImageFromURLString(model.avatar)
+        tweetTextLabel.text = model.text
     }
     
     private let sharedDateFormatter: NSDateFormatter = {
@@ -35,6 +34,9 @@ class TweetCell: UITableViewCell, ConfigurableCell {
         
         return dateFormatter
     }()
+    
+    private func loadImage(urlString: String) {
+    }
     
     static let cellIdentifier = String(TweetCell)
 }
