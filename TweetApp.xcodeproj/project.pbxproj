@@ -113,6 +113,7 @@
 		64DAB1991DC652A000960004 /* TweetViewModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1971DC652A000960004 /* TweetViewModuleAssembly.swift */; };
 		64DAB1A21DC69AB800960004 /* SharedImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1A11DC69AB800960004 /* SharedImageCache.swift */; };
 		64DAB1A31DC69AB800960004 /* SharedImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1A11DC69AB800960004 /* SharedImageCache.swift */; };
+		64DAB1A61DC69DB900960004 /* TweetListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1A51DC69DB900960004 /* TweetListServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +187,7 @@
 		64DAB1941DC6525F00960004 /* TweetViewModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewModuleInput.swift; sourceTree = "<group>"; };
 		64DAB1971DC652A000960004 /* TweetViewModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewModuleAssembly.swift; sourceTree = "<group>"; };
 		64DAB1A11DC69AB800960004 /* SharedImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedImageCache.swift; sourceTree = "<group>"; };
+		64DAB1A51DC69DB900960004 /* TweetListServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetListServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +451,7 @@
 		64B278621DC4ACC3006DEFFB /* TweetAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				64DAB1A41DC69D9F00960004 /* Service tests */,
 				64B278631DC4ACC3006DEFFB /* TweetAppTests.swift */,
 				64B278651DC4ACC3006DEFFB /* Info.plist */,
 			);
@@ -518,6 +521,14 @@
 				64DAB1A11DC69AB800960004 /* SharedImageCache.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		64DAB1A41DC69D9F00960004 /* Service tests */ = {
+			isa = PBXGroup;
+			children = (
+				64DAB1A51DC69DB900960004 /* TweetListServiceTests.swift */,
+			);
+			name = "Service tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -727,6 +738,7 @@
 				649704AC1DC52C4700323814 /* TweetParsingOperation.swift in Sources */,
 				64DAB1751DC5FF3200960004 /* FetchedResultsDataProvider.swift in Sources */,
 				648CE3DD1DC4D57900CBAC1E /* NetworkRequestConstructor.swift in Sources */,
+				64DAB1A61DC69DB900960004 /* TweetListServiceTests.swift in Sources */,
 				649704D41DC5530F00323814 /* TweetListPresenter.swift in Sources */,
 				648CE3F51DC4DBF400CBAC1E /* TwitterAuthorizationService.swift in Sources */,
 				649704CE1DC5527400323814 /* TweetListViewInput.swift in Sources */,
