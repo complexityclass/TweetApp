@@ -19,6 +19,7 @@ class TweetListPresenter: TweetListViewOutput {
     private var dataSource: TableViewDataSource<TweetListPresenter, Data, TweetCell>!
     
     // MARK: TweetListViewOutput
+    
     func viewDidFinishLoading() {
         service?.loadTweets(nil)
     }
@@ -42,11 +43,16 @@ class TweetListPresenter: TweetListViewOutput {
         let objectID = object.objectID
         view?.performTransitionToTweetViewWithObjectID(objectID)
     }
+    
+    func didRequestDataReload() {
+        service?.loadTweets(nil)
+    }
 }
 
 extension TweetListPresenter: DataProviderDelegate {
     func dataProviderDidUpdate(updates: [DataProviderUpdate<TweetObject>]?) {
         dataSource.processUpdates(updates)
+        view?.shouldEndRefreshing()
     }
 }
 
