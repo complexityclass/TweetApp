@@ -10,7 +10,7 @@ import Foundation
 
 struct Tweet {
     
-    let date: NSDate
+    var date: NSDate?
     let author: String
     let avatar: NSURL
     let text: String
@@ -23,14 +23,28 @@ extension Tweet {
         }
         
         self.text = text
-        self.date = NSDate()
         self.avatar = NSURL()
         self.author = ""
+        self.date = formatDate(dictionary["created_at"] as? String)
     }
+    
+    private func formatDate(dateString: String?) -> NSDate? {
+        guard let dateString = dateString else { return nil }
+        dateFormatter.dateFormat = Constants.dateFormat.rawValue
+        
+        return dateFormatter.dateFromString(dateString)
+    }
+    
 }
+
+private let dateFormatter = NSDateFormatter()
 
 extension Tweet: CustomStringConvertible {
     var description: String {
-        return "\(text)"
+        return "date: \(date ?? "no date"),  text: \(text)"
     }
+}
+
+private enum Constants: String {
+    case dateFormat = "EEE MMM dd HH:mm:ss z yyy"
 }
