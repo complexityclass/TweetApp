@@ -75,16 +75,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Bartosz Milewski" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufv-Pi-hAf">
-                                                    <rect key="frame" x="78" y="13" width="124.5" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="7Om-4h-Icr"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="r1h-pL-In0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="12.09.2016" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n48-ff-Cyh">
                                                     <rect key="frame" x="245" y="13" width="120" height="20"/>
                                                     <constraints>
@@ -108,6 +98,16 @@
                                                         <constraint firstAttribute="height" constant="40" id="v38-Mk-rky"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Bartosz Milewski" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufv-Pi-hAf">
+                                                    <rect key="frame" x="78" y="13" width="124.5" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="7Om-4h-Icr"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="r1h-pL-In0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qTR-uo-c5y" firstAttribute="leading" secondItem="X59-xl-tE8" secondAttribute="leadingMargin" id="6PX-s9-t1v"/>
@@ -167,9 +167,54 @@
                     <view key="view" contentMode="scaleToFill" id="QUO-VB-g4Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dead_tweet" translatesAutoresizingMaskIntoConstraints="NO" id="BQU-Mf-hhZ">
+                                <rect key="frame" x="67" y="92" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="PaG-Bn-u5S"/>
+                                    <constraint firstAttribute="height" constant="240" id="SCZ-BD-6Hu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bartosz Milewski" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dK9-be-b2Z">
+                                <rect key="frame" x="118" y="337" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.09.2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ola-lA-l6M">
+                                <rect key="frame" x="152" y="363" width="71" height="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Category theory for haskell programmers! Don't fear the monad!" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPh-Ht-Uga">
+                                <rect key="frame" x="20" y="388" width="335" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BQU-Mf-hhZ" firstAttribute="top" secondItem="wbb-jk-OP8" secondAttribute="bottom" constant="28" id="Bnd-Ja-aa4"/>
+                            <constraint firstItem="BQU-Mf-hhZ" firstAttribute="centerX" secondItem="QUO-VB-g4Z" secondAttribute="centerX" id="FeZ-Ld-JVs"/>
+                            <constraint firstItem="Ola-lA-l6M" firstAttribute="top" secondItem="dK9-be-b2Z" secondAttribute="bottom" constant="5" id="G4T-3M-fcJ"/>
+                            <constraint firstItem="Ola-lA-l6M" firstAttribute="centerX" secondItem="QUO-VB-g4Z" secondAttribute="centerX" id="H6d-x6-MTs"/>
+                            <constraint firstItem="yPh-Ht-Uga" firstAttribute="leading" secondItem="QUO-VB-g4Z" secondAttribute="leading" constant="20" id="I3D-ps-MGS"/>
+                            <constraint firstItem="dK9-be-b2Z" firstAttribute="top" secondItem="BQU-Mf-hhZ" secondAttribute="bottom" constant="5" id="QlM-p9-nHW"/>
+                            <constraint firstItem="dK9-be-b2Z" firstAttribute="centerX" secondItem="QUO-VB-g4Z" secondAttribute="centerX" id="Rzl-md-oBw"/>
+                            <constraint firstAttribute="trailing" secondItem="yPh-Ht-Uga" secondAttribute="trailing" constant="20" id="S8j-Mq-AOU"/>
+                            <constraint firstItem="Jrn-Y9-SoD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yPh-Ht-Uga" secondAttribute="bottom" constant="20" id="TY0-kp-QI7"/>
+                            <constraint firstItem="yPh-Ht-Uga" firstAttribute="top" secondItem="Ola-lA-l6M" secondAttribute="bottom" constant="8" id="m0J-nl-CF3"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="dK9-be-b2Z" id="j5G-oo-CG2"/>
+                        <outlet property="avatarImageView" destination="BQU-Mf-hhZ" id="iJB-UX-kYZ"/>
+                        <outlet property="dateLabel" destination="Ola-lA-l6M" id="DmQ-y7-umi"/>
+                        <outlet property="tweetTextLabel" destination="yPh-Ht-Uga" id="chY-sQ-oNW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFU-1t-eTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="KlN-bK-DCL" customClass="TweetViewModuleAssembly" customModule="TweetApp" customModuleProvider="target">
@@ -200,6 +245,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dead_tweet" width="128" height="128"/>
         <image name="tweety" width="48" height="48"/>
     </resources>
 </document>

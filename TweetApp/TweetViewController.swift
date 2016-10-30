@@ -12,25 +12,39 @@ import CoreData
 class TweetViewController: UIViewController, TweetViewInput {
     
     var output: TweetViewOutput?
-    
     var modelId: NSManagedObjectID?
-
+    
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var tweetTextLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let modelId = modelId {
             output?.viewDidFinishLoadingWithModelID(modelId)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    func setupInitialState() {
-    }
+    func setupInitialState() {}
     
     func setupWithModel(tweetObject: TweetObject) {
-        print("Did setup with object")
+        
+        authorLabel.text = tweetObject.author
+        if let date = tweetObject.date {
+            dateLabel.text = localDateFormatter.stringFromDate(date)
+        }
+        avatarImageView.downloadImageFromURLString(tweetObject.avatar)
+        tweetTextLabel.text = tweetObject.text
     }
+    
+    private let localDateFormatter: NSDateFormatter = {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.timeStyle = .ShortStyle
+        dateFormatter.doesRelativeDateFormatting = true
+        dateFormatter.formattingContext = .Standalone
+        
+        return dateFormatter
+    }()
 }
