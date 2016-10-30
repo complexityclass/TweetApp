@@ -12,13 +12,16 @@ import CoreData
 class TweetListViewController: UIViewController, TweetListViewInput, Router {
     
     var output: TweetListViewOutput?
-    @IBOutlet weak var tableView: UITableView!
-    
     private var modelID: NSManagedObjectID?
+    
+    @IBOutlet weak var tableView: UITableView!
+    var refreshControl = UIRefreshControl()
+    var dateFormatter = NSDateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupInitialState()
         setupTableView(tableView)
         output?.setupDataSource(tableView)
         output?.viewDidFinishLoading()
@@ -45,14 +48,29 @@ class TweetListViewController: UIViewController, TweetListViewInput, Router {
         output?.viewDidSelectCellAtPath(indexPath)
     }
     
+    func didPullToRefresh(sender: AnyObject) {
+        output?.didRequestDataReload()
+    }
+    
     // MARK: TweetListViewInput
     
     func setupInitialState() {
+        dateFormatter.dateStyle = .ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        
+        refreshControl.backgroundColor = UIColor.clearColor()
+        refreshControl.tintColor = UIColor.blueColor()
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     func performTransitionToTweetViewWithObjectID(objectID: NSManagedObjectID) {
         self.modelID = objectID
         routeToSingleTweet()
+    }
+    
+    func shouldEndRefreshing() {
+        refreshControl.endRefreshing()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -14,4 +14,6 @@ protocol TweetListViewInput: class {
     func setupInitialState()
     
     func performTransitionToTweetViewWithObjectID(objectID: NSManagedObjectID)
+    
+    func shouldEndRefreshing()
 }

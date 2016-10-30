@@ -29,6 +29,7 @@ class ServiceAssembly {
                                                               constructor: requestConstructor,
                                                               context: defaultContext,
                                                               operationBuilder: operationBuilder)
+        operationBuilder.tweetListService = tweetListService
         
         return tweetListService
     }

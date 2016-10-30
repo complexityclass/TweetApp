@@ -10,6 +10,7 @@ import Foundation
 
 struct Tweet {
     
+    let idString: String
     let text: String
     var date: NSDate?
     var author: String?
@@ -18,11 +19,13 @@ struct Tweet {
 
 extension Tweet {
     init?(dictionary: JSONDictionary) {
-        guard let text = dictionary["text"] as? String else {
+        guard let text = dictionary["text"] as? String,
+              let idString = dictionary["id_str"] as? String else {
             return nil
         }
         
         self.text = text
+        self.idString = idString
         
         if let user = dictionary["user"] {
             
@@ -50,7 +53,7 @@ private let dateFormatter = NSDateFormatter()
 
 extension Tweet: CustomStringConvertible {
     var description: String {
-        return " date: \(date ?? "no date")\n author: \(author ?? "no author")\n text: \(text)\n avatar: \(avatar ?? "no avatar")"
+        return " date: \(date ?? "no date")\n author: \(author ?? "no author")\n text: \(text)\n avatar: \(avatar ?? "no avatar") \n id: \(idString)"
     }
 }
 
