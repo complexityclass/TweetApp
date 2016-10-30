@@ -18,6 +18,10 @@ class TweetObject: ManagedObject, ManagedObjectType {
     static func insertInContext(context: NSManagedObjectContext, tweet: Tweet) -> TweetObject {
         let tweetObject: TweetObject = context.insertObject()
         tweetObject.text = tweet.text
+        tweetObject.author = tweet.author
+        tweetObject.date = tweet.date
+        tweetObject.avatar = tweet.avatar?.absoluteString
+        
         return tweetObject
     }
 }
