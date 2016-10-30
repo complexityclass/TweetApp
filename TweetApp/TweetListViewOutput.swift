@@ -6,9 +6,11 @@
 //  Copyright © 2016 Popov Valery. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol TweetListViewOutput {
     
     func viewDidFinishLoading()
+    
+    func setupDataSource(tableView: UITableView)
 }
