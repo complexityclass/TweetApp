@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TweetListPresenter: TweetListViewOutput {
+class TweetListPresenter: NSObject, TweetListViewOutput {
     
     weak var view: TweetListViewInput?
     var service: TweetListService?
@@ -17,18 +17,18 @@ class TweetListPresenter: TweetListViewOutput {
     
     private typealias Data = FetchedResultsDataProvider<TweetListPresenter>
     private var dataSource: TableViewDataSource<TweetListPresenter, Data, TweetCell>!
+    private var serviceIsBusy: Bool = false
     
     // MARK: TweetListViewOutput
     
     func viewDidFinishLoading() {
-        service?.loadTweets()
+        service?.loadTweets(.refreshNew)
     }
     
     func setupDataSource(tableView: UITableView) {
         
         let fetchRequest = NSFetchRequest(entityName: String(TweetObject))
         fetchRequest.sortDescriptors = TweetObject.defaultSortDescriptors
-        fetchRequest.fetchBatchSize = 20
         fetchRequest.returnsObjectsAsFaults = false
         fetchRequest.sortDescriptors = TweetObject.defaultSortDescriptors
         
@@ -38,6 +38,8 @@ class TweetListPresenter: TweetListViewOutput {
                                                                   cacheName: nil)
         let dataProvider = FetchedResultsDataProvider(fetchedResultsController: fetchedResultsController, delegate: self)
         dataSource = TableViewDataSource(tableView: tableView, dataProvider: dataProvider, delegate: self)
+        
+        tableView.delegate = self
     }
     
     func viewDidSelectCellAtPath(indexPath: NSIndexPath) {
@@ -47,7 +49,7 @@ class TweetListPresenter: TweetListViewOutput {
     }
     
     func didRequestDataReload() {
-        service?.loadTweets()
+        service?.loadTweets(.refreshNew)
     }
 }
 
@@ -66,6 +68,19 @@ extension TweetListPresenter: DataSourceDelegate {
 
 extension TweetListPresenter: TweetListServiceObserver {
     func serviceActualizedData() {
+        serviceIsBusy = false
         view?.shouldEndRefreshing()
+    }
+}
+
+extension TweetListPresenter: UITableViewDelegate {
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.bounds.size.height) {
+            if !serviceIsBusy {
+                serviceIsBusy = true
+                service?.loadTweets(.fetchMoreOld)
+            }
+        }
     }
 }

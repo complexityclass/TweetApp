@@ -15,8 +15,7 @@ struct Credentials {
     static let requestHeaders = ["Accept-Encoding": "gzip",
                                   "Authorization" : Bearer]
     
-    private static let defaultBatchSize: Int = 10
-    
+    private static let defaultBatchSize: Int = 20
     static func urlParameters(cursor: Int?, count: Int) -> [String: String] {
         
         var parameters = ["screen_name": "twitterapi"]

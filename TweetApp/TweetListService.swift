@@ -8,11 +8,18 @@
 
 import Foundation
 
+enum TweetLoadType {
+    case refreshNew
+    case fetchMoreOld
+}
+
 protocol TweetListService {
     
-    func loadTweets()
+    func loadTweets(loadType: TweetLoadType)
     
     func addObserver(observer: TweetListServiceObserver)
+    
+    func obtainedTweetCount() -> Int
 }
 
 protocol TweetListServiceObserver: class {

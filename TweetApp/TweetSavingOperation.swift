@@ -28,9 +28,9 @@ class TweetSavingOperation: BaseOperation {
             return
         }
         
-        var saveCount = 0
         var cursor = Int(tweets.first?.idString ?? "\(Int.max)")!
         context.performChanges {
+            var saveCount = 0
             for tweet in tweets {
                 if self.isNewTweet(tweet.idString) {
                     TweetObject.insertInContext(context, tweet: tweet)

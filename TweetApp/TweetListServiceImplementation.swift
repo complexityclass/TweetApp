@@ -19,7 +19,7 @@ class TweetListServiceImplementation: TweetListService {
     var context: NSManagedObjectContext
     
     var currentCursor: Int?
-    private var totalTweetsCount: Int = 0
+    private var totalTweetsCount: Int = 20
     private let observers: NSMapTable = NSMapTable(keyOptions: .StrongMemory, valueOptions: .WeakMemory, capacity: 5)
     
     let operationQueue: NSOperationQueue = NSOperationQueue()
@@ -35,17 +35,29 @@ class TweetListServiceImplementation: TweetListService {
         self.operationBuilder = operationBuilder
     }
     
-    func loadTweets() {
+    func loadTweets(loadType: TweetLoadType) {
         
         guard let apiURL = NSURL(string: API.Timeline.user_timeline.rawValue) else {
             return
+        }
+        
+        var fetchCursor: Int?
+        var fetchCount: Int = totalTweetsCount
+        switch loadType {
+        case .refreshNew:
+            fetchCursor = nil
+            fetchCount = totalTweetsCount
+        case .fetchMoreOld:
+            fetchCursor = currentCursor
+            fetchCount += 20
+            
         }
         
         let requestConfiguration = RequestConfiguration(requestURL: apiURL,
                                                         requestType: .GET,
                                                         parameters: nil,
                                                         headers: credentials.requestHeaders,
-                                                        urlParameters: credentials.urlParameters(currentCursor, count: totalTweetsCount))
+                                                        urlParameters: credentials.urlParameters(fetchCursor, count: fetchCount))
         
         let request = requestBuilder.constructRequest(requestConfiguration)
         let operations = operationBuilder.buildTweetServiceOperations(request, client: networkClient, context: context)
@@ -55,7 +67,9 @@ class TweetListServiceImplementation: TweetListService {
         }
     }
     
-    let object = NSObject()
+    func obtainedTweetCount() -> Int {
+        return totalTweetsCount
+    }
     
     func addObserver(observer: TweetListServiceObserver) {
         observers.setObject(observer, forKey: String(observer.dynamicType))
