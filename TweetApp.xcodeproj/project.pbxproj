@@ -111,6 +111,8 @@
 		64DAB1961DC6525F00960004 /* TweetViewModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1941DC6525F00960004 /* TweetViewModuleInput.swift */; };
 		64DAB1981DC652A000960004 /* TweetViewModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1971DC652A000960004 /* TweetViewModuleAssembly.swift */; };
 		64DAB1991DC652A000960004 /* TweetViewModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1971DC652A000960004 /* TweetViewModuleAssembly.swift */; };
+		64DAB1A21DC69AB800960004 /* SharedImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1A11DC69AB800960004 /* SharedImageCache.swift */; };
+		64DAB1A31DC69AB800960004 /* SharedImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAB1A11DC69AB800960004 /* SharedImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +185,7 @@
 		64DAB1911DC64B8500960004 /* TweetViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewOutput.swift; sourceTree = "<group>"; };
 		64DAB1941DC6525F00960004 /* TweetViewModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewModuleInput.swift; sourceTree = "<group>"; };
 		64DAB1971DC652A000960004 /* TweetViewModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewModuleAssembly.swift; sourceTree = "<group>"; };
+		64DAB1A11DC69AB800960004 /* SharedImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +458,7 @@
 		64DAB1761DC5FF5300960004 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				64DAB19D1DC699EF00960004 /* Helpers */,
 				64DAB1731DC5FF3200960004 /* FetchedResultsDataProvider.swift */,
 				64DAB1771DC5FF7700960004 /* DataProvider.swift */,
 				64DAB17A1DC60CC100960004 /* TableViewDataSource.swift */,
@@ -506,6 +510,14 @@
 				64DAB1941DC6525F00960004 /* TweetViewModuleInput.swift */,
 			);
 			name = Presenter;
+			sourceTree = "<group>";
+		};
+		64DAB19D1DC699EF00960004 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				64DAB1A11DC69AB800960004 /* SharedImageCache.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -624,6 +636,7 @@
 				64DAB1821DC61C6000960004 /* TweetCell.swift in Sources */,
 				649704311DC50C7A00323814 /* Router.swift in Sources */,
 				649704AB1DC52C4700323814 /* TweetParsingOperation.swift in Sources */,
+				64DAB1A21DC69AB800960004 /* SharedImageCache.swift in Sources */,
 				64DAB18F1DC64B7400960004 /* TweetViewPresenter.swift in Sources */,
 				64DAB18C1DC64B3C00960004 /* TweetViewInput.swift in Sources */,
 				649704D01DC552A400323814 /* TweetListViewOutput.swift in Sources */,
@@ -705,6 +718,7 @@
 				648CE3E31DC4D6BC00CBAC1E /* URLRequestFactory.swift in Sources */,
 				64DAB1991DC652A000960004 /* TweetViewModuleAssembly.swift in Sources */,
 				64DAB1961DC6525F00960004 /* TweetViewModuleInput.swift in Sources */,
+				64DAB1A31DC69AB800960004 /* SharedImageCache.swift in Sources */,
 				649704B01DC531E200323814 /* Tweet.swift in Sources */,
 				649704B41DC532FA00323814 /* BaseOperation.swift in Sources */,
 				648CE3FC1DC4E1A200CBAC1E /* ServiceAssembly.swift in Sources */,

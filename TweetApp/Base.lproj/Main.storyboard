@@ -24,15 +24,25 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="HWt-dz-TP5"/>
                                 </constraints>
-                                <state key="normal" title="Authorize"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Show timeline"/>
                                 <connections>
                                     <action selector="authorizeTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GAE-2I-tua"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fake authorization using bearer token for user @twitterapi timeline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-Ky-XgH">
+                                <rect key="frame" x="0.0" y="313" width="375" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Gei-Ky-XgH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ABL-w5-TTu"/>
+                            <constraint firstAttribute="trailing" secondItem="Gei-Ky-XgH" secondAttribute="trailing" id="Kjl-No-rd0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ehn-Nv-kCn" secondAttribute="trailing" constant="10" id="LNb-4L-T7v"/>
+                            <constraint firstItem="Gei-Ky-XgH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aTy-Sm-mr2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ehn-Nv-kCn" secondAttribute="bottom" constant="35" id="uw5-Lg-HmV"/>
                             <constraint firstItem="Ehn-Nv-kCn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="w0V-eN-dlf"/>
                         </constraints>

@@ -21,11 +21,19 @@ extension UIImageView {
                 return
         }
         
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            guard let data = data where error == nil else { return }
-            dispatch_async(dispatch_get_main_queue()){
-                self.image = UIImage(data: data)
-            }
-        }.resume()
+        let cache = SharedImageCache.sharedInstance
+        if let cachedImage = cache.loadImage(urlString) {
+            self.image = cachedImage
+        } else {
+            NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+                guard let data = data where error == nil else { return }
+                dispatch_async(dispatch_get_main_queue()){
+                    if let downloadedImage = UIImage(data: data) {
+                        cache.cacheImage(downloadedImage, url: (response?.URL?.absoluteString)!)
+                        self.image = downloadedImage
+                    }
+                }
+                }.resume()
+        }
     }
 }
